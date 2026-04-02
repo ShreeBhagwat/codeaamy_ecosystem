@@ -27,7 +27,16 @@ const EcosystemHub = ({ onSelectApp }) => {
       icon: Calendar,
       color: 'linear-gradient(135deg, #f59e0b, #d97706)',
       shadow: '0 10px 30px rgba(245, 158, 11, 0.4)',
-      comingSoon: true
+      comingSoon: false
+    },
+    {
+      id: 'team',
+      name: 'Team Hub',
+      description: 'Manage users, assign roles, and track daily attendance centrally.',
+      icon: Cloud,
+      color: 'linear-gradient(135deg, #8b5cf6, #6d28d9)',
+      shadow: '0 10px 30px rgba(139, 92, 246, 0.4)',
+      comingSoon: false
     },
     {
       id: 'cloud',

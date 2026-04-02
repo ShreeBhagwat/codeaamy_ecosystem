@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TaskProvider } from '../../context/TaskContext';
 import TaskSidebar from './components/TaskSidebar';
 import TaskDashboard from './components/TaskDashboard';
 import AddTaskModal from './components/AddTaskModal';
@@ -15,20 +14,18 @@ const TaskMasterApp = ({ onBackToHub }) => {
   };
 
   return (
-    <TaskProvider>
-      <div className="app-container animate-fade-in" style={{ animationDuration: '0.6s' }}>
-        <TaskSidebar activeTab={activeTab} setActiveTab={setActiveTab} onBackToHub={onBackToHub} />
-        
-        <main className="main-content">
-          <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
-            {activeTab === 'board' && <TaskDashboard onOpenDetail={openTaskDetail} />}
-          </div>
-        </main>
+    <div className="app-container animate-fade-in" style={{ animationDuration: '0.6s' }}>
+      <TaskSidebar activeTab={activeTab} setActiveTab={setActiveTab} onBackToHub={onBackToHub} />
+      
+      <main className="main-content">
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
+          {activeTab === 'board' && <TaskDashboard onOpenDetail={openTaskDetail} />}
+        </div>
+      </main>
 
-        <AddTaskModal />
-        <TaskDetailModal task={selectedTask} />
-      </div>
-    </TaskProvider>
+      <AddTaskModal />
+      <TaskDetailModal task={selectedTask} />
+    </div>
   );
 };
 

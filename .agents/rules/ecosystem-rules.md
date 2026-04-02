@@ -127,3 +127,62 @@ Before final output:
 * Check component reuse
 
 Reject output if mismatch detected
+
+## Appended later on as the Team managemetn was added
+
+# Team Integration Rules
+
+## 18. Single Source of Users
+
+* All apps MUST use users from Team App
+* Do NOT create separate user models
+
+---
+
+## 19. Task Assignment
+
+* Tasks must be assigned using Team App users
+* Assigned user must be visible in UI
+
+---
+
+## 20. Scheduling Constraints
+
+* Chrono MUST respect:
+
+  * User working hours
+  * Attendance status
+
+---
+
+## 21. Attendance Impact
+
+* If user is absent → no tasks assigned
+* If user is late → adjust schedule
+
+---
+
+## 22. Consistent User Identity
+
+* Same user ID across:
+
+  * TaskMaster
+  * Chrono
+  * Expense (if needed)
+
+---
+
+## 23. UI Consistency
+
+* User avatars, names, and display must match across apps
+
+---
+
+## 24. Validation
+
+Before final output:
+
+* Check user consistency across apps
+* Check task assignment correctness
+* Check scheduling respects availability
+
