@@ -18,7 +18,7 @@ const EcosystemHub = ({ onSelectApp }) => {
       icon: CheckSquare,
       color: 'linear-gradient(135deg, #10b981, #059669)',
       shadow: '0 10px 30px rgba(16, 185, 129, 0.4)',
-      comingSoon: true
+      comingSoon: false
     },
     {
       id: 'calendar',
