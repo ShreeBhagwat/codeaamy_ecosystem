@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useTaskMaster } from '../../../context/TaskContext';
+import { useTeam } from '../../../context/TeamContext';
 import { X } from 'lucide-react';
 
 const AddTaskModal = () => {
   const { addTask } = useTaskMaster();
+  const { teamMembers } = useTeam();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -76,14 +78,17 @@ const AddTaskModal = () => {
 
           <div className="form-group">
             <label className="label">Assign To</label>
-            <input 
-              type="text" 
-              className="input" 
-              placeholder="e.g. John Doe"
+            <select 
+              className="select" 
               required
               value={formData.assignee}
               onChange={(e) => setFormData({ ...formData, assignee: e.target.value })}
-            />
+            >
+              <option value="" disabled>Select Team Member</option>
+              {teamMembers.map(member => (
+                <option key={member.id} value={member.name}>{member.name}</option>
+              ))}
+            </select>
           </div>
 
           <div style={{ display: 'flex', gap: '1rem' }}>
